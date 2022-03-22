@@ -1,0 +1,36 @@
+.sidebar {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 22%;
+    background-color: #bdbdbd;
+
+    padding-left: 3rem;
+    padding-top: 35px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+
+
+    @media screen and (max-width: '780px') {
+        padding-left: 1rem;
+        padding-top: 25px;
+
+        font-size: 18px;
+    }
+
+    @media screen and (max-width: '600px') {
+        padding-right: 1rem;
+        font-size: 14px;   
+    }
+
+    &_title {
+        color: #000000;
+
+        margin-bottom: 20px;   
+        
+        @media screen and (max-width: '780px') {
+            margin-bottom: 10px;   
+        }
+    }
+}
