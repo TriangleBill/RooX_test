@@ -1,0 +1,55 @@
+.user-card {
+    display: block;
+    position: relative;
+    max-width: 420px;
+    width: 100%;
+    background: #f3f3f3;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 19px;
+
+    margin-bottom: 24px;
+    margin-right: 10px;  
+
+    &:last-child {
+        margin-bottom: 10px;  
+    }
+
+    &-field {
+        display: flex;
+    }
+
+    &__title {
+        color: #a3a3a3;
+        margin-right: 7px;
+    }
+
+    &__more-btn {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+
+        color: #4B51EF;
+        text-decoration: none;
+
+        @media screen and (max-width: '350px') {
+            position: static;
+        }
+    }
+
+    @media screen and (max-width: '430px') {
+        font-size: 12px;
+    }
+
+}
+
+.users-counter {
+    text-align: right;
+    font-size: 17px;
+
+    @media screen and (max-width: '430px') {
+        font-size: 14px;
+    }
+}

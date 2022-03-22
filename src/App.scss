@@ -1,2 +1,26 @@
-@use './styles/sidebar.scss';
-@use './styles/btn.scss';
+@use "./styles/sidebar.scss";
+@use "./styles/btn.scss";
+@use "./styles/users-list.scss";
+
+.page {
+  display: flex;
+}
+
+.container {
+  margin: 36px 13px 41px 25px;
+  width: 100%;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+
+  color: #000000;
+
+  margin-bottom: 18px;
+
+  @media screen and (max-width: "430px") {
+    font-size: 18px;
+  }
+}
