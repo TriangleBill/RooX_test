@@ -1,14 +1,21 @@
 @use "./styles/sidebar.scss";
 @use "./styles/btn.scss";
 @use "./styles/users-list.scss";
+@use "./styles/user-page.scss";
 
 .page {
   display: flex;
 }
 
 .container {
-  margin: 36px 13px 41px 25px;
+  margin: 36px auto 41px;
+  padding: 0 10px;
   width: 100%;
+  max-width: 700px;
+
+  @media screen and (max-width: "550px") {
+    margin: 10px auto;
+  }
 }
 
 .title {
@@ -20,7 +27,12 @@
 
   margin-bottom: 18px;
 
-  @media screen and (max-width: "430px") {
-    font-size: 18px;
+  @media screen and (max-width: "550px") {
+    font-size: 20px;
   }
+
+  @media screen and (max-width: "430px") {
+    font-size: 16px;
+  }
+
 }
