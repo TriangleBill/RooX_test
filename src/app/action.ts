@@ -18,3 +18,6 @@ export const setIsLoading = createAction(
         }
     })
 )
+
+export const sortByCity = createAction(ActionTypes.SortByCity)
+export const sortByCompany = createAction(ActionTypes.SortByCompany)

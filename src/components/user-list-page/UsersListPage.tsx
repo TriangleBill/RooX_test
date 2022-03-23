@@ -1,11 +1,9 @@
-import React from 'react'
 import SideBar from '../sidebar/SideBar';
 import Title from '../Title';
 import UserCard from './UserCard';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../app/store';
 import { UserType } from '../../app/types'
-import { rootReducer } from './../../app/reducer';
 import Loader from './../Loader';
 
 export default function UsersListPage(): JSX.Element {
@@ -32,7 +30,7 @@ export default function UsersListPage(): JSX.Element {
                 {usersList.map((user: UserType, index) => (
                     <UserCard
                         user={user}
-                        key={user.id + index}
+                        key={user.id + index + Date.now() + user.name}
                     />
                 ))}
             </>
