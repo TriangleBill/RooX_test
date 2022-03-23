@@ -9,11 +9,11 @@
             font-size: 14px;
             line-height: 14px;
 
-            @media screen and (max-width: '550px') {
+            @media screen and (max-width: "550px") {
                 font-size: 12px;
             }
 
-            @media screen and (max-width: '415px') {
+            @media screen and (max-width: "415px") {
                 font-size: 10px;
             }
         }
@@ -37,7 +37,7 @@
 
         @media screen and (max-width: "550px") {
             font-size: 12px;
-          }
+        }
     }
 
     &__form-value {
@@ -50,13 +50,17 @@
         box-sizing: border-box;
         border-radius: 5px;
 
-        @media screen and (max-width: '800px') {
+        @media screen and (max-width: "800px") {
             width: 100%;
         }
 
         @media screen and (max-width: "550px") {
             font-size: 14px;
-          }
+        }
+
+        &:invalid {
+            border: 1px solid #D91313
+        }
     }
 
     &__form-comment {
@@ -73,7 +77,7 @@
     margin-left: auto;
     font-size: 16px;
 
-    @media screen and (max-width: '415px') {
+    @media screen and (max-width: "415px") {
         font-size: 14px;
     }
 

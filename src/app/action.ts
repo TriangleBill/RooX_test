@@ -10,11 +10,29 @@ export const setUsers = createAction(
     })
 )
 
+export const setUser = createAction(
+    ActionTypes.SetUser,
+    (user) => ({
+        payload: {
+            user
+        }
+    })
+)
+
 export const setIsLoading = createAction(
     ActionTypes.SetIsLoading,
     (isLoading) => ({
         payload: {
             isLoading
+        }
+    })
+)
+
+export const SetIsDisabled = createAction(
+    ActionTypes.SetIsDisabled,
+    (isDisabled) => ({
+        payload: {
+            isDisabled
         }
     })
 )

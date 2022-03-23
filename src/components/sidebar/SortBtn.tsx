@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { sortByCity, sortByCompany } from './../../app/action';
 
 type SprtBtnProps = {
@@ -8,6 +9,7 @@ type SprtBtnProps = {
 
 export default function SortBtn({ sortedBy }: SprtBtnProps): JSX.Element {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     function handleClick() {
         if (sortedBy === 'city') {
@@ -15,6 +17,8 @@ export default function SortBtn({ sortedBy }: SprtBtnProps): JSX.Element {
         } else {
             dispatch(sortByCompany())
         }
+
+        navigate('/')
     }
 
     
