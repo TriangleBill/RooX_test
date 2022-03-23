@@ -6,11 +6,17 @@ import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { fetchUsers } from './app/asyncAction';
+
+store.dispatch(fetchUsers())
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-    <BrowserRouter>
+      <BrowserRouter>
+        <ToastContainer />
         <App />
       </BrowserRouter>
     </Provider>
