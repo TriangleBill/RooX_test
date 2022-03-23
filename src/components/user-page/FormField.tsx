@@ -1,3 +1,4 @@
+import { Dispatch, memo, SetStateAction } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../app/store';
 
@@ -5,10 +6,11 @@ import { RootState } from '../../app/store';
 type FormFieldProps = {
     title: string,
     type: string,
-    value: string
+    value: string,
+    setData: Dispatch<SetStateAction<string>>;
 }
 
-export default function FormField({ title, type, value }: FormFieldProps): JSX.Element {
+function FormField({ title, type, value, setData }: FormFieldProps): JSX.Element {
     const idDisabled = useSelector((state: RootState) => {
         const { rootReducer } = state
         return rootReducer.isDisabled
@@ -29,15 +31,20 @@ export default function FormField({ title, type, value }: FormFieldProps): JSX.E
         }
     }
 
+    function handleChange(e:React.ChangeEvent<HTMLInputElement>) {
+        setData(e.target.value)
+    }
+
     return (
         <div className='user-page__form-field'>
             <div className="user-page__form-title">{title}</div>
             {(type == 'email' || type == 'url') ?
-                <input type={type} className="user-page__form-value" defaultValue={value} placeholder={title} disabled={idDisabled} required />
+                <input onChange={handleChange} type={type} className="user-page__form-value" defaultValue={value} placeholder={title} disabled={idDisabled} required />
                 :
-                <input type='text' className="user-page__form-value" defaultValue={value} placeholder={title} disabled={idDisabled} required pattern={patternCreator()} />
+                <input onChange={handleChange} type='text' className="user-page__form-value" defaultValue={value} placeholder={title} disabled={idDisabled} required pattern={patternCreator()} />
             }
-            {/* <input type='text' className="user-page__form-value" defaultValue={value} placeholder={title} disabled={idDisabled} required pattern='[0-9 | -]+$' /> */}
         </div>
     )
 }
+
+export default memo(FormField)

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 import SortBtn from './SortBtn';
 
-export default function SideBar(): JSX.Element {
+function SideBar(): JSX.Element {
   return (
     <div className='sidebar'>
         <h4 className='sidebar_title'>Сортировка</h4>
@@ -11,3 +11,5 @@ export default function SideBar(): JSX.Element {
     </div>
   )
 }
+
+export default memo(SideBar)
